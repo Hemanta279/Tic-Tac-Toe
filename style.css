@@ -1,16 +1,21 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background-color: #53b3cb;
+  /* background-color: #53b3cb; */
+  background-color: #1A1A2E;
   text-align: center;
 }
 h1{
   padding-top: 20px;
-  color:#e01a4f;
+  /* color:#e01a4f; */
+  color:#00BCD4;
   font-weight:bolder;
+  letter-spacing:2px;
 }
 .container {
   height: 70vh;
@@ -30,58 +35,98 @@ h1{
   justify-content: center;
   align-items: center;
   gap: 1.5vmin;
+  border-radius: 1rem;
+  background-color: #1A1A2E;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .box {
   height: 18vmin;
   width: 18vmin;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: none;
   box-shadow: 0 0 1rem #0c090d;
-  font-size: 8vmin;
-  color: #f15946;
-  background-color: #f9c22e;
+  font-size: 10vmin;
+  /* color: #f15946; */
+  color:white;
+  /* background-color: #f9c22e; */
+  background-color: #2C394B;
+  transition: all 0.2s ease-in-out; 
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-#reset-btn {
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #e01a4f;
-  color: #f9c22e;
+/* #reset-btn { */
+  /* padding: 1rem; */
+  /* font-size: 1.25rem; */
+  /* background-color: #e01a4f; */
+  /* background-color: #FF4C68; */
+  /* color: #f9c22e; */
   /* border:none ; */
-  border-radius: 1rem;
-  font-weight: 500;
-}
+  /* border-radius: 1rem; */
+  /* font-weight: 500; */
+/* } */
 
-#new-btn {
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #e01a4f;
-  color: #f9c22e;
+/* #new-btn { */
+  /* padding: 1rem; */
+  /* font-size: 1.25rem; */
+  /* background-color: #e01a4f; */
+  /* color: #f9c22e; */
   /* border:none ; */
-  border-radius: 1rem;
-  font-weight: 500;
+  /* border-radius: 1rem; */
+  /* font-weight: 500; */
+  /* border: none; */
+/* } */
+
+#reset-btn, #new-btn {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  background-color: #FF4C68; /* Vibrant Pink/Red */
+  color: #FFF;
   border: none;
+  border-radius: 2rem; /* Pill shape */
+  font-weight: 600;
+  margin: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
+#reset-btn:hover, #new-btn:hover {
+    background-color: #e01a4f;
+}
 #msg {
-  color: #f9c22e;
-  font-size: 5vmin;
+  /* color: #f9c22e; */
+  color:#FFD700;
+  font-size: 6vmin;
+  font-weight:700;
 }
 
 .msg-container {
-  height: 100vmin;
+  height: 100vh;
+  width:100vw;
+  position: absolute;
+  top: 0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 4rem;
+  z-index:10;
 }
 .hide {
   display: none;
 }
-
-
+/* extra features */
+.box:not(:disabled):hover {
+  /* Lighter background when the cursor is over an enabled box */
+  background-color: #3e5066; 
+  cursor: pointer;
+}
+.box:disabled {
+    /* Optional: Ensure disabled boxes look slightly different */
+    opacity: 0.9; 
+}
 
 /* 1. Small Mobile Screens (up to 480px) */
 @media (max-width: 480px) {
@@ -99,5 +144,45 @@ h1{
     #reset-btn, #new-btn {
         padding: 0.75rem 1.2rem;
         font-size: 1rem;
+    }
+}
+
+
+/* ... (Keep all your existing "Fancy" CSS from the previous response) ... */
+
+/* --- Add these styles for the new features --- */
+
+#turn-info {
+    /* Style for the score/turn display */
+    color: #00BCD4; /* Bright Cyan */
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    background-color: #2C394B;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+#turn-info strong {
+    font-weight: 700;
+    color: #FF4C68; /* Vibrant Pink/Red for scores */
+}
+
+/* Feature 3: Winning Line Highlight */
+.win-highlight {
+    background-color: #38c172 !important; /* A bright green for the winning line */
+    color: #1A1A2E !important; /* Dark text for contrast */
+    transform: scale(1.05); /* Slight scale for emphasis */
+    animation: pulse 1s infinite alternate;
+}
+
+/* Animation for the winning line */
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 10px 0px #38c172;
+    }
+    to {
+        box-shadow: 0 0 20px 5px #38c172;
     }
 }
