@@ -18,7 +18,7 @@ h1{
   letter-spacing:2px;
 }
 .container {
-  height: 70vh;
+  height: 55vh;
   display: flex;
   /* flex-wrap:wrap; */
   justify-content: center;
@@ -134,9 +134,12 @@ h1{
         font-size: 10vw; 
     }
     .game {
-        height: 75vw; /* Maximize board size on small devices */
-        width: 75vw;
+        height: 65vw; /* Maximize board size on small devices */
+        width: 65vw;
         gap: 2vw;
+    }
+    .container{
+      height:65vh;
     }
     .box {
         font-size: 15vw;
