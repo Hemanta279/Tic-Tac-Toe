@@ -1,65 +1,72 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background-color:#53B3CB;
-    text-align: center;
+body {
+  background-color: #53b3cb;
+  text-align: center;
 }
-.container{
-    height: 70vh;
-    display:flex;
-    /* flex-wrap:wrap; */
-    justify-content: center;
-    align-items: center;
+h1{
+  padding-top: 20px;
+  color:#e01a4f;
+  font-weight:bolder;
 }
-
-.game{
-    height:60vmin;
-    width:60vmin;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    align-items: center;
-    gap:1.5vmin;
+.container {
+  height: 70vh;
+  display: flex;
+  /* flex-wrap:wrap; */
+  justify-content: center;
+  align-items: center;
 }
 
-.box{
-    height:18vmin;
-    width:18vmin;
-    border-radius: 1rem;
-    border: none;
-    box-shadow: 0 0 1rem #0C090D;
-    font-size: 8vmin;
-    color: #F15946;
-    background-color: #F9C22E;
+
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
 }
 
-#reset-btn{
-    padding:1rem;
-    font-size: 1.25rem;
-    background-color: #E01A4F;
-    color:#F9C22E;
-    /* border:none ; */
-    border-radius: 1rem;
-    font-weight: 500;
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 1rem #0c090d;
+  font-size: 8vmin;
+  color: #f15946;
+  background-color: #f9c22e;
 }
 
-#new-btn{
-    padding:1rem;
-    font-size: 1.25rem;
-    background-color: #E01A4F;
-    color:#F9C22E;
-    /* border:none ; */
-    border-radius: 1rem;
-    font-weight: 500;
-    border:none;
+#reset-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #e01a4f;
+  color: #f9c22e;
+  /* border:none ; */
+  border-radius: 1rem;
+  font-weight: 500;
 }
 
-#msg{
-    color:#F9C22E;
-    font-size: 5vmin;
+#new-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #e01a4f;
+  color: #f9c22e;
+  /* border:none ; */
+  border-radius: 1rem;
+  font-weight: 500;
+  border: none;
+}
+
+#msg {
+  color: #f9c22e;
+  font-size: 5vmin;
 }
 
 .msg-container {
@@ -70,6 +77,27 @@ body{
   flex-direction: column;
   gap: 4rem;
 }
-.hide{
-    display:none;
+.hide {
+  display: none;
+}
+
+
+
+/* 1. Small Mobile Screens (up to 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 10vw; 
+    }
+    .game {
+        height: 75vw; /* Maximize board size on small devices */
+        width: 75vw;
+        gap: 2vw;
+    }
+    .box {
+        font-size: 15vw;
+    }
+    #reset-btn, #new-btn {
+        padding: 0.75rem 1.2rem;
+        font-size: 1rem;
+    }
 }
