@@ -4,7 +4,7 @@ let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
 
-let turnO = true; // true for 'X', false for 'O'
+let turnO = true; // true for 'O', false for 'X'
 let count = 0; //to track draw
 const players = {
     "O": "Player 1 (O)",
@@ -25,10 +25,10 @@ const resetGame = () => {
   turnO = true;
   count = 0;
   enableBoxes();
-  setTimeout(() =>{
-    msgContainer.classList.add("hide");
-  },300)
-  // msgContainer.classList.add("hide");
+  // setTimeout(() =>{
+  //   msgContainer.classList.add("hide");
+  // },300)
+  msgContainer.classList.add("hide");
 };
 
 boxes.forEach((box) => {
