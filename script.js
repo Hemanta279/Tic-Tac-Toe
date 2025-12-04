@@ -30,7 +30,7 @@ const winPatterns = [
 
 // Helper function to update the displayed turn/score
 const updateDisplay = () => {
-  turnInfo.innerHTML = `O Score: **${scoreO}** | X Score: **${scoreX}** | Next: **${
+  turnInfo.innerHTML = `Player1 Score: **${scoreO}** | Player2 Score: **${scoreX}** | Next: **${
     turnO ? "O" : "X"
   }**`;
 };
